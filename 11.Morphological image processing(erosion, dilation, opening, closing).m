@@ -1,0 +1,11 @@
+a=imread('1.jpg');
+subplot(2,3,1),imshow(a),title('Original Image');
+s=strel('line',7,7);
+eroded_Img=imerode(a,s);
+dilated_Img=imdilate(a,s);
+opened_Img=imopen(a,s);
+closed_Img=imclose(a,s);
+subplot(2,3,2),imshow(eroded_Img),title('Eroded Image');
+subplot(2,3,3),imshow(dilated_Img),title('Dilated Image');
+subplot(2,3,4),imshow(opened_Img),title('Opened Image');
+subplot(2,3,5),imshow(closed_Img),title('Closed Image');
